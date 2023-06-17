@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&family=Raleway&family=Roboto:wght@300;400;500&display=swap');
+// Estilos para los textos
+
+@mixin tex1($weight, $size, $line, $color){
+    font-family: $fontRoboto;
+    font-style: normal;
+    text-align: center;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line;
+    color: $color;
+    letter-spacing: -0.3px;
+}
+
+// @include tex1($colorWhite)
+
+@mixin tex2($weight, $color){
+font-family: $fontNunito;
+font-style: normal;
+font-weight: $weight;
+font-size: 14px;
+line-height: 19px;
+text-align: center;
+letter-spacing: -0.3px;
+color: $color;
+}
+
+
+@mixin tex3(){
+    font-family: $fontRaleway;
+    font-style: normal;
+    font-weight: $weight;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.3px;
+    color: $gray5;
+    }
+
+    @mixin buttonSquare1(){
+        width: 358px;
+        height: 44px;
+        background-color:$yellow;
+        color: $color;
+        border: 2px solid $yellow;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 5px;
+        transition: 0.5s;
+       
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        font-family: $fontRoboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+     
+        &:hover{
+            background-color: $white;
+            border: solid 2px $yellow;
+            color: $gray4;
+        }
+    }; 
+    
+    @mixin buttonSquare1(){
+        width: 358px;
+        height: 44px;
+        background-color:$yellow;
+        color: $color;
+        border: 2px solid $yellow;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 5px;
+        transition: 0.5s;
+       
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        font-family: $fontRoboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+     
+        &:hover{
+            background-color: $white;
+            border: solid 2px $yellow;
+            color: $gray4;
+        }
+    };
+
+    //Boton gris grande
+
+    @mixin buttonSquare2(){
+        width: 358px;
+        height: 44px;
+        background-color:$yellow;
+        color: $color;
+        border: 2px solid $yellow;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 5px;
+        transition: 0.5s;
+       
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        font-family: $fontRoboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+     
+        &:hover{
+            background-color: $white;
+            border: solid 2px $yellow;
+            color: $gray4;
+        }
+    };
+
+
