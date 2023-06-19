@@ -1,10 +1,10 @@
 import AppRoutes from "../src/components/AppRoutes/AppRoutes";
-
+import Order from "./components/Order/Order";
 
 function App() {
   return (
     <div className="App">
-    <AppRoutes></AppRoutes>
+<Order></Order>
     </div>
   );
 }
