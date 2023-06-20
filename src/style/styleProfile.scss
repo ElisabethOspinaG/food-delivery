@@ -1,0 +1,88 @@
+@import "../style/style.scss";
+
+.profile{
+    @include mobile{
+        
+        width: 390px;
+        height: 844px;
+        display: flex;
+        flex-direction: column; 
+        margin-top: 20px;
+    } 
+    &__container-user{
+        @include mobile{
+           
+            width:385px;
+            height:100px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+
+   
+        }
+    }
+    &__figure-imgUser{
+        @include mobile{
+            background-color: green;
+            border-radius: 50px;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+    &__name{
+        @include mobile{
+            @include tex1($w400, $s14, $l16, $gray5)
+        }
+
+    }
+    &__container-button{
+        @include mobile{
+            width: 385px;
+            height: auto;
+            padding-left: 16px;
+            margin-bottom: 85px;
+        }
+
+    }
+    &__button{
+        @include mobile{
+           @include buttonSquare2();
+        }
+
+    }
+    &__container-layout{
+        @include mobile{
+           
+            width: 385px;
+            height: auto;
+            padding-left: 16px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+    }
+    &__button-name{
+        @include mobile{
+           
+            width: 270px;
+            height: auto;
+            padding-left: 16px;
+            display: flex;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: center;
+        }
+
+    }
+}
