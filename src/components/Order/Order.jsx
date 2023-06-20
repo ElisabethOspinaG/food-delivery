@@ -59,7 +59,7 @@ const Order = () => {
    <h1>Total</h1> 
    <h2>2.44</h2>
 </div>
-<button id="order">Order</button>
+<button id="orderbutton">Order</button>
         </div>
     )
 }

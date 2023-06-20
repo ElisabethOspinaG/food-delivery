@@ -144,13 +144,11 @@ border-radius: 10px;
       &__hr{
         position: absolute;
         left: 23px;
-        right: 16px;
-        top: 698px;
+        top: 688px;
         bottom: 175px;
-        width: 375px;
+        width: 353px;
         height: 1px;
         background-color: #A7A7A7;
-        padding-left: 16px;
       }
       &__products h1{
         @include Texto
@@ -196,6 +194,7 @@ border-radius: 10px;
 #order{
 top:287px;
 }
+
 #order1{
     top:364px;
     }
@@ -227,7 +226,7 @@ textarea::placeholder {
   color: #A7A7A7;
   
 }
-#order{
+#orderbutton{
     position: absolute;
 left: 16px;
 
@@ -240,4 +239,8 @@ background: #FFE031;
 border-radius: 10px;
 Width: 400px;
 Height:44px;
+}
+#delivery{
+ 
+  top:653px;  
 }
