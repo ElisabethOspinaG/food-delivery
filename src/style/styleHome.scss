@@ -1,0 +1,302 @@
+@import "../style/style.scss";
+
+.home{
+    
+    @include mobile{
+        width: 390px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+         
+    } 
+
+    @include tablet{
+        background-color: transparent;
+    
+    } 
+    
+    @include desk{
+        background-color: transparent;
+    }
+    
+
+    &__container-location{
+        @include mobile{
+            width: 260px;
+            height: 32px;
+            margin-left: 16px;
+            margin-top: 10px; 
+            margin-bottom: 12px;
+            display: flex;
+        }
+        
+    }
+    &__img-location{
+        @include mobile{
+           
+            width: 32px;
+            height: 32px;
+            display: flex;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+    }
+    &__container-textLocation{
+        @include mobile{
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding: 4px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+    }
+    &__text-location{
+        @include tex1($w400, $s10, $l12, $yellow)
+    }
+    &__location{
+        @include tex1($w400, $s14, $l16, $gray5)
+    }
+    
+
+    &__container-promotions{
+       
+        @include mobile{
+           
+            width: 370px;
+            height: 80px;
+            margin-left: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            gap: 16px;
+            overflow: auto;
+            white-space: nowrap;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+    &__promotions1{
+        @include mobile{
+            width: 259px;
+            height: 80px;
+            display: flex;
+            img{
+                border-radius: 16px;
+            }
+        }
+    }
+    &__figurePromo1{
+        @include mobile{
+            width: 259px;
+            height: 80px;
+            border-radius: 16px;
+           
+            img{
+                width: 100%;
+                height: 100%;
+                
+            }
+        }
+       
+    }
+    &__promotions2{
+        @include mobile{
+            width: 180px;
+            height: 80px;
+            border-radius: 10px;
+            background-color: yellow;
+            
+            // background-size: cover; //para que la imagen se ajuste proporcionalmente
+        }
+    }
+    &__figurePromo2{
+        @include mobile{
+            width: 200px;
+            height: 80px;
+            border-radius: 10px;
+            padding-left: 5px;
+           
+            
+            // background: url('../assets/img/home/prom2.svg') no-repeat;
+
+            img{
+               
+                background-size: cover; //para que la imagen se ajuste proporcionalmente
+                
+            }
+        }
+       
+    }
+
+    &__container-title{
+        @include mobile{
+           
+            width: 260px;
+            height: 32px;
+            margin-left: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+           
+        }
+        
+    }
+    &__container-title{
+        @include mobile{
+            @include tex1($w300, $s14, $l16, $gray5) 
+        }
+    }
+
+    &__container-buttonsFilter{
+        @include mobile{
+            
+            width: 370px;
+            height: 40px;
+            margin-left: 16px;
+            margin-bottom: 16px;
+            gap: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row;
+        }
+        
+    }
+    &__section-restaurant{
+        @include mobile{
+            width: 358px;
+            height: 420px;
+            margin-left: 16px;
+            overflow-y: auto;
+        } 
+    }
+    &__container-restaurant{
+        @include mobile{
+            width: 358px;
+            height: 106px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+        }
+        
+    }
+
+   
+    &__figure-restaurant{
+
+        @include mobile{
+            width: 137px;
+            height: 106px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-size: cover;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 10%, 65% 100%, 0% 100%);
+
+            img{
+               width: 100%;
+               height: 100%;
+                    
+            }
+        }
+           
+    }
+    &__container-InfoRestaurant{
+        @include mobile{
+            width: 205px;
+            padding-top: 10px;
+            gap:5px;
+            justify-content: space-between;
+        }
+    }
+    &__container-nameRestaurant{
+        @include mobile{
+         margin-bottom: 5px;
+        
+        }
+    }
+    &__span-nameRestaurant{
+        @include mobile{
+            @include tex1($w300, $s14, $l16, $gray5)
+        }
+    }
+    &__container-comentary{
+        @include mobile{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 5px;
+            
+            img{
+                width: 15px;
+                margin-right: 5px;
+            }
+            }
+
+    }
+    &__container-workTime{
+        @include mobile{
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+            gap:10px;
+        }
+    }
+    
+    &__span-textworkTime{
+        @include mobile{
+            @include tex1($w300, $s14, $l16, $gray5)
+        }
+
+    }
+    &__span-workTime{
+        @include mobile{
+            @include tex1($w300, $s14, $l16, $gray5)
+        }
+
+    }
+    &__container-before{
+        display: flex;
+        align-items: center;
+        gap:10px;
+
+    }
+    &__text-before{
+        @include mobile{
+            @include tex1($w300, $s14, $l16, $gray5)
+        }
+
+    }
+    &__before{
+        @include mobile{
+            @include tex1($w300, $s14, $l16, $gray5)
+        }
+
+    }
+
+    &__container-layout{
+        @include mobile{
+            width: 358px;
+            height: auto;
+            margin-left: 16px;
+            padding: 0 1rem;
+            margin-bottom: 16px;
+            display: flex;
+        }
+       
+    }
+}
+           
+    
+
+

@@ -1,0 +1,37 @@
+@import "../../style/style.scss";
+
+.button__filter{
+
+    @include mobile{
+        @include buttonSquare($gray1, $gray1, $wi106, $he36, $yellow, $yellow);
+    }
+
+    &-active {
+        @include mobile{
+            background-color: $yellow;
+            border: 2px solid $yellow;
+        }
+        
+        }
+
+    &__figure{
+       
+        @include mobile{
+            width: 16px;
+            height: 16px;
+              
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &__text{
+       
+        @include mobile{
+      
+            @include tex1($w400, $s10, $l12, $gray3)
+        }
+    }
+}   
