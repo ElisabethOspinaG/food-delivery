@@ -1,4 +1,4 @@
-import AppRoutes from "../src/components/AppRoutes/AppRoutes";
+import AppRoutes from "./components/router/AppRoutes";
 import Order from "./components/Order/Order";
 
 function App() {
