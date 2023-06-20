@@ -2,5 +2,242 @@
 @import"./_mixin";
 @import "./mediaQuery.scss";
 .order{
-color:red
+    height: 844px;
+    width: 390px;
+    &__title{
+        position: absolute;
+width: 65px;
+height: 16px;
+left: 163px;
+top: 56px;
+margin: 0;
+@include Texto( $gray5, $gray2,$s20, 
+$s14);
+color:$gray5;
+
+    }
+    &__button2{
+ 
+        width: 2px;
+        height: 0px; 
+           color: $gray5;
+        font-size:x-large;
+        border: none;
+        background-color: transparent;
+        box-sizing: border-box; 
+          position: absolute;
+        left: 17px;
+        top: 64px;
+    }
+    &__button{
+        width: 2px;
+        height: 0px; 
+           color: $gray5;
+        font-size:x-large;
+        border: none;
+        background-color: transparent;
+        box-sizing: border-box; 
+          position: absolute;
+        left: 17px;
+        top: 64px;
+    }
+    &__deliver h1{
+        position: absolute;
+        width: 84px;
+        height: 23px;
+        left: 16px;
+        top: 104px;
+        @include Texto 
+        ( $gray5, $gray2,$s20, 
+        $s14);
+        font-size: $s20; 
+      
+    }
+    &__deliver img{
+        position: absolute;
+left: 18.37px;
+
+top: 137.59px;
+
+    }
+    &__text{
+        @include Texto( $gray5, $gray2,$s20, 
+        $s14);
+        color:$gray5;
+    }
+    &__containerButton button{
+        width: 106px;
+        height: 32px;
+        border: none;
+        background: #F2F2F2;
+        border-radius: 5px;
+    }
+    &__containerButton{
+       gap:10px;
+        position:absolute;
+        left:16px;
+        top:218px;
+    }
+    &__Button button img {
+        width: 24px;
+        height: 15px;
+      }
+      &__Button{
+        gap:10px;
+        width: 375px;
+        height: 55px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        left: 17px;
+        top: 232px;
+        white-space: nowrap; /* Evita el salto de línea de los elementos */
+        display: flex;
+        align-items: center;
+        overflow: auto;
+        flex-direction: row;
+      }
+      &__section{
+        height: 44px;
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        left: 16px;
+      }
+      &__section h1 {
+    
+        @include Texto( $gray5, $gray2,$s20, 
+        $s14);
+        color:$gray5;
+      }
+      &__section img{
+        width: 44px;
+height: 44px;
+border-radius: 10px;
+      }
+      &__section h2{
+        @include Texto( $gray5, $gray2,$s20, 
+        $s14);
+        color:$gray2;
+      }
+      &__total h2{
+        @include Texto
+        ( $gray5, $gray2,$s20, 
+        $s14);
+        font-size: $s20;
+      }
+      &__total{
+        top:691px; 
+       @include div
+      }
+      &__total h1{
+        @include Texto
+        ( $gray5, $gray2,$s20, 
+        $s14);
+        font-size: $s14;
+      }
+      &__products{
+        @include div
+      }
+      &__hr{
+        position: absolute;
+        left: 23px;
+        right: 16px;
+        top: 698px;
+        bottom: 175px;
+        width: 375px;
+        height: 1px;
+        background-color: #A7A7A7;
+        padding-left: 16px;
+      }
+      &__products h1{
+        @include Texto
+        ( $gray5, $gray2,$s20, 
+        $s14);
+        font-size: $s14; 
+      }
+
+}
+#delivery{
+    top:643px;
+}
+
+#products{
+
+    top:617px;
+}
+
+#ubicacion{
+    position: absolute;
+    left:47px;
+    top:138px;
+    margin:0;
+}
+#payment{
+    position: absolute;
+    left:16px;
+    top:185px;
+    margin:0;
+}
+#deliver{
+    position: absolute;
+    left:16px;
+    top:104px;  
+    margin:0;
+    width:fit-content;
+}
+#boton{
+    position: absolute; 
+    left: 373px;
+    top: 145px;
+}
+#order{
+top:287px;
+}
+#order1{
+    top:364px;
+    }
+#note{
+    @include Texto
+    ( $gray5, $gray2,$s20, 
+    $s14);
+    font-size: $s20; 
+    top:435px;
+    position:absolute;
+    left: 16px; 
+}
+#imput{
+
+    box-sizing: border-box;
+
+position: absolute;
+width: 358px;
+height: 44px;
+left: 16px;
+top: 468px;
+border: 1px solid #A7A7A7;
+border-radius: 10px;
+}
+input::placeholder,
+textarea::placeholder {
+    @include Texto ( $gray5, $gray2,$s20, 
+    $s14);
+  color: #A7A7A7;
+  
+}
+#order{
+    position: absolute;
+left: 16px;
+
+top: 740px;
+
+
+/* Main color */
+margin-top:32px;
+background: #FFE031;
+border-radius: 10px;
+Width: 400px;
+Height:44px;
 }

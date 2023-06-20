@@ -140,3 +140,25 @@ color: $color;
     };
 
 
+    @mixin Texto ( $gray5, $gray2,$s20, 
+    $s14) {
+        color: $gray5;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: $s14;
+        line-height: 16px;
+        text-align: center;
+        margin: 0px;
+      }
+      @mixin div (){
+        position: absolute;
+       
+        padding: 16px;
+         height: 44px;
+         width:390px;
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-between;
+      }
