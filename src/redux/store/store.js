@@ -2,8 +2,9 @@ import { configureStore } from "@reduxjs/toolkit";
 import { paletasReducer } from "../reducers/restaurantesReducer";
 
 
+
 const reducer = {
-  
+  user:userReducer,
   paletasStore: paletasReducer,
 };
 

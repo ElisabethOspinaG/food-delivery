@@ -13,7 +13,6 @@ const SearchPage = () => {
 
   useEffect(() => {
     dispatch(actionGetPaletasAsync());
-    console.log(paletas); 
   }, []);
 
   const [isInputFocused, setIsInputFocused] = useState(false);

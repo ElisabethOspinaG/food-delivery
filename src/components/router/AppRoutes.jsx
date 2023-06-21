@@ -5,7 +5,7 @@ import Home from '../../pages/Home';
 import StartPage from '../../pages/StartPage';
 import SearchPage from '../../pages/SearchPage';
 import OrderPlaced from '../../pages/OrderHistory';
-import LoginUser from '../../pages/LoginUser';
+import LoginUser from '../../pages/Register';
 import LoginAdministrator from '../../pages/LoginAdministrator';
 import Comments from "../../pages/Comments";
 import NoFound from '../../pages/NoFound';

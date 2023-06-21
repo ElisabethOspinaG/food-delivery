@@ -16,7 +16,7 @@ export const actionGetPaletasAsync = () => {
           id: doc.id,
           ...doc.data(),
         });
-        console.log(...oo_oo(`5244b449_0`,paletas));
+        // console.log(...oo_oo(`5244b449_0`,paletas));
         //   console.log(doc.id, " => ", doc.data());
       });
     } catch (error) {
