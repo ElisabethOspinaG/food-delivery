@@ -7,7 +7,7 @@ import useOnClick from '../../functions/useOnClick';
 
 
 const LayoutHome = () => {
-    const handleClick = useOnClick();
+    // const handleClick = useOnClick();
    
     const buttonLayout = [
         {

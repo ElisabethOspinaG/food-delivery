@@ -4,7 +4,7 @@ import RestaurantPage from '../restaurantPage/RestaurantPage';
 import Home from '../../pages/Home';
 import StartPage from '../../pages/StartPage';
 import SearchPage from '../../pages/SearchPage';
-import OrderPlaced from '../../pages/OrderPlaced';
+import OrderPlaced from '../../pages/OrderHistory';
 import LoginUser from '../../pages/LoginUser';
 import LoginAdministrator from '../../pages/LoginAdministrator';
 import Comments from "../../pages/Comments";

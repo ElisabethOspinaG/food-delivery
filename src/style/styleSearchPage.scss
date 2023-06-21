@@ -1,0 +1,72 @@
+@import "./mixin";
+@import "./mediaQuery";
+.search{
+    @include mobile{
+      
+    height: 844px;
+   width: 390px;
+       } 
+     h1{
+    @include Texto ( $gray5, $gray2,$s20, 
+    $s14,$s10);
+    font-size:$s14;
+    @include mobile{
+    position: absolute;
+    top:125px;
+    left: 16px;}
+}
+span{
+    @include Texto ( $gray5, $gray2,$s20, 
+    $s14,$s10);
+   color:$gray2;
+   
+}
+&__div{
+    position:absolute;
+    top:159.93px;
+    left: 16px;
+    
+}
+&__search{
+    position:absolute;
+    top:79px;
+    left: 16px;
+    
+}
+}
+
+.input::placeholder {
+  position: absolute;
+  left: 37px;
+
+  }
+
+.fa{
+    position:absolute;
+    top:79px;
+    left: 35px;
+    color:$gray2;
+}
+
+.refresh-icon {
+    color: $gray2; /* Cambia el color a tu preferencia */
+    font-size: 24px; /* Cambia el tamaño de fuente a tu preferencia */
+    /* Agrega otros estilos según tus necesidades */
+  }
+  .input{
+    position: absolute;
+width: 358px;
+height: 44px;
+left: 17px;
+top: 65px;
+
+/* Complementary color (light gray) */
+
+background: #F2F2F2;
+border-radius: 10px;
+  }
+  .home__layout{
+    position: absolute;
+    left: 34px;
+top: 798px;
+  }

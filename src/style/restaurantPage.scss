@@ -3,8 +3,12 @@
 @import "./mediaQuery.scss";
 
 .container {
-    height: 844px;
+         @include mobile{
+      
+     height: 844px;
     width: 390px;
+        }    
+    
     &__button {
         width: 2px;
         height: 0px; 
@@ -16,10 +20,7 @@
           position: absolute;
         left: 17px;
         top: 64px;
-        @include mobile{
-      
-     
-        } 
+
       
 
     }
@@ -139,7 +140,7 @@ top: 64px;
         position: absolute;
         width: 137px;
         height: 106px;
-        background: #C4C4C4;
+   
         border-radius: 10px;
         overflow: hidden;
         left: 15px;
@@ -158,7 +159,7 @@ top: 64px;
         border-radius: 10px;
         background-image: url("https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw");
         background-size: cover;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 100%);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 10%, 65% 100%, 0% 100%);
     }
 }    
 
@@ -186,11 +187,11 @@ margin:0;
 }
 #duracion{
     position: absolute;
-width: 51px;
-height: 16px;
+
 left: 323px;
 top: 192px;
-
+width: 51px;
+height: 16px;
 background: #F2F2F2;
 border-radius: 4px;
 }
