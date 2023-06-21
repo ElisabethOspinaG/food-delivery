@@ -8,7 +8,7 @@ import OrderHistory from "./pages/OrderHistory";
 function App() {
   return (
     <div className="App">
-<OrderHistory></OrderHistory>
+<SearchPage></SearchPage>
     </div>
   );
 }

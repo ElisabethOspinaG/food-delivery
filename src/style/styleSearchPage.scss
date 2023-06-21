@@ -31,8 +31,52 @@ span{
     position:absolute;
     top:79px;
     left: 16px;
-    
 }
+&__result1{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  @include mobile{
+     height: 667px;
+     top:153px;
+     left: 16px;
+  }
+ 
+}
+&__result{
+  position: absolute;}
+&__result img{
+  width: 40px;
+   height: 40px;
+   border-radius: 10px;
+   position: inherit;
+}
+&__result h1{
+  @include Texto  ( $gray5, $gray2,$s20, 
+  $s14,$s10);
+  @include mobile{
+    position:relative;
+    top:2px;
+    left:60px;
+
+  }
+}
+&__result h2{
+  @include Texto  ( $gray5, $gray2,$s20, 
+  $s14,$s10);
+  color:$gray2;
+  @include mobile{
+    position:relative;
+    top:22px;
+    left:60px;
+
+  }
+}
+&__input{    position: absolute;
+  width: 358px;
+  height: 44px;
+  left: 17px;
+  top: 65px;}
 }
 
 .input::placeholder {
@@ -42,9 +86,9 @@ span{
   }
 
 .fa{
-    position:absolute;
-    top:79px;
-    left: 35px;
+    position:relative;
+    top: -47px;
+    left: 16px;
     color:$gray2;
 }
 
@@ -54,11 +98,11 @@ span{
     /* Agrega otros estilos según tus necesidades */
   }
   .input{
-    position: absolute;
+    position: relative;
 width: 358px;
 height: 44px;
-left: 17px;
-top: 65px;
+left: 0px;
+top: 0px;
 
 /* Complementary color (light gray) */
 
@@ -69,4 +113,11 @@ border-radius: 10px;
     position: absolute;
     left: 34px;
 top: 798px;
+  }
+  #buttontrash{
+    position: relative;
+    color: $gray2;
+    top:-30px;
+    left: 333px;
+
   }
