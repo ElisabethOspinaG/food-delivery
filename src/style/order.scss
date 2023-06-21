@@ -2,9 +2,12 @@
 @import"./_mixin";
 @import "./mediaQuery.scss";
 .order{
+  @include mobile{
     height: 844px;
     width: 390px;
-    &__title{
+  }
+ 
+    &__title{ @include mobile{
         position: absolute;
 width: 65px;
 height: 16px;
@@ -12,11 +15,11 @@ left: 163px;
 top: 56px;
 margin: 0;
 @include Texto( $gray5, $gray2,$s20, 
-$s14);
+$s14,$s10);
 color:$gray5;
-
     }
-    &__button2{
+    }
+    &__button2{  @include mobile{
  
         width: 2px;
         height: 0px; 
@@ -27,9 +30,9 @@ color:$gray5;
         box-sizing: border-box; 
           position: absolute;
         left: 17px;
-        top: 64px;
+        top: 64px;}
     }
-    &__button{
+    &__button{  @include mobile{
         width: 2px;
         height: 0px; 
            color: $gray5;
@@ -39,9 +42,10 @@ color:$gray5;
         box-sizing: border-box; 
           position: absolute;
         left: 17px;
-        top: 64px;
+        top: 64px;}
     }
     &__deliver h1{
+      @include mobile{
         position: absolute;
         width: 84px;
         height: 23px;
@@ -49,20 +53,22 @@ color:$gray5;
         top: 104px;
         @include Texto 
         ( $gray5, $gray2,$s20, 
-        $s14);
+    $s14,$s10);
         font-size: $s20; 
-      
+      }
     }
     &__deliver img{
+      @include mobile{
         position: absolute;
 left: 18.37px;
 
-top: 137.59px;
+top: 137.59px;}
 
     }
     &__text{
+   
         @include Texto( $gray5, $gray2,$s20, 
-        $s14);
+        $s14,$s10);
         color:$gray5;
     }
     &__containerButton button{
@@ -73,10 +79,11 @@ top: 137.59px;
         border-radius: 5px;
     }
     &__containerButton{
+      @include mobile{
        gap:10px;
         position:absolute;
         left:16px;
-        top:218px;
+        top:218px;}
     }
     &__Button button img {
         width: 24px;
@@ -97,6 +104,7 @@ top: 137.59px;
         flex-direction: row;
       }
       &__section{
+        @include mobile{
         height: 44px;
         width:100%;
         display: flex;
@@ -104,12 +112,12 @@ top: 137.59px;
         align-items: center;
         justify-content: space-between;
         position: absolute;
-        left: 16px;
+        left: 16px;}
       }
       &__section h1 {
     
         @include Texto( $gray5, $gray2,$s20, 
-        $s14);
+        $s14,$s10);
         color:$gray5;
       }
       &__section img{
@@ -119,33 +127,35 @@ border-radius: 10px;
       }
       &__section h2{
         @include Texto( $gray5, $gray2,$s20, 
-        $s14);
+        $s14,$s10);
         color:$gray2;
       }
       &__total h2{
         @include Texto
         ( $gray5, $gray2,$s20, 
-        $s14);
+    $s14,$s10);
         font-size: $s20;
       }
       &__total{
-        top:691px; 
+        @include mobile{
+        top:691px; }
        @include div
       }
       &__total h1{
         @include Texto
         ( $gray5, $gray2,$s20, 
-        $s14);
+    $s14,$s10);
         font-size: $s14;
       }
       &__products{
         @include div
       }
       &__hr{
+        @include mobile{
         position: absolute;
         left: 23px;
         top: 688px;
-        bottom: 175px;
+        bottom: 175px;}
         width: 353px;
         height: 1px;
         background-color: #A7A7A7;
@@ -153,11 +163,12 @@ border-radius: 10px;
       &__products h1{
         @include Texto
         ( $gray5, $gray2,$s20, 
-        $s14);
+    $s14,$s10);
         font-size: $s14; 
       }
 
 }
+@include mobile{
 #delivery{
     top:643px;
 }
@@ -201,7 +212,7 @@ top:287px;
 #note{
     @include Texto
     ( $gray5, $gray2,$s20, 
-    $s14);
+    $s14,$s10);
     font-size: $s20; 
     top:435px;
     position:absolute;
@@ -221,8 +232,8 @@ border-radius: 10px;
 }
 input::placeholder,
 textarea::placeholder {
-    @include Texto ( $gray5, $gray2,$s20, 
-    $s14);
+    @include Texto( $gray5, $gray2,$s20, 
+    $s14,$s10);
   color: #A7A7A7;
   
 }
@@ -243,4 +254,4 @@ Height:44px;
 #delivery{
  
   top:653px;  
-}
+}}
