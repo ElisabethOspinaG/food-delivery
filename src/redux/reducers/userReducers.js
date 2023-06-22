@@ -1,19 +1,27 @@
 import { userTypes } from "../types/userTypes";
 
-export const userReducer = (state = {}, action) => {
-  switch (action.type) {
-    case userTypes.USER_REGISTER:
-      return {
-        ...action.payload,
-      };
-
-    case userTypes.USER_LOGIN:
-      return {
-        ...action.payload,
-      };
-    case userTypes.USER_LOGOUT:
-      return {};
-    default:
-      return state;
-  }
+const initialValue = {
+  user: {},
+  error: null
 };
+
+const userReducer = (state = initialValue, action) => {
+  switch (action.type) {
+    case userTypes.CREATE_USER:
+      
+    return {
+        ...state,
+        user: {
+          ...action.payload.user
+        },
+        error: action.payload.error
+      }
+      
+    default:
+      return {
+        ...state,
+      }
+  }
+}
+
+export default userReducer;

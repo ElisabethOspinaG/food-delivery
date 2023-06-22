@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import RestaurantPage from '../restaurantPage/RestaurantPage';
+import RestaurantPage from '../../pages/RestaurantPage';
 import Home from '../../pages/Home';
 import StartPage from '../../pages/StartPage';
 import SearchPage from '../../pages/SearchPage';
@@ -25,7 +25,6 @@ const AppRoutes = () => {
         <Route path="user" element={<LoginUser/>} />
         <Route path="admin" element={<LoginAdministrator/>} />
         <Route path="profile" element={<Profile/>} />
-          
         <Route path="comments" element={<Comments/>} />
         <Route path="noFound" element={<NoFound/>} />
       </Routes>

@@ -4,18 +4,18 @@ import {useSelector, useDispatch} from 'react-redux';
 import { incrementCounter, decrementCounter } from '../../redux/actions/counterActions';
 
 const CounterProducts = () => {
-    const state = useSelector(state=>state);
+    const state = useSelector(state=>state.counter.count);
     const dispatch = useDispatch();
   return (
     <>
         <div className='counter'>
-            <button className='counter__buttons' onClick={() => dispatch(decrementCounter)}>
+            <button className='counter__buttons' onClick={() => dispatch(decrementCounter())}>
                  -
             </button>
             <button className='counter__date'>
-                {state.counter}
+                {state}
             </button>
-                < button className='counter__buttons' onClick={() => dispatch(incrementCounter)}>
+                < button className='counter__buttons' onClick={() => dispatch(incrementCounter())}>
                          +
             </button>
         </div >

@@ -10,9 +10,9 @@
     padding: 5px;
 
 
-    // &__buttons {
-    //     @include buttonRound(); 
-    // }
+    &__buttons {
+     @include buttonSquare($gray2, $gray2, $wi66, $he22, $white, $gray5); 
+    }
 
     &__date {
         width: 22px;

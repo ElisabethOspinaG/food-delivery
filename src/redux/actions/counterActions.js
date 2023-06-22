@@ -1,13 +1,30 @@
 import { typesCounter } from '../types/counterTypes';
 
-export const incrementCounter = () => (
-    console.log("estoy dando click al button incremento"),
-    { type: typesCounter.INCREMENT_COUNTER });
+export const incrementCounter = () => {
 
-export const decrementCounter = () => ({ type: typesCounter.DECREMENT_COUNTER });
-console.log("estoy dando click al button decremento")
+    return {
+      type: typesCounter.INCREMENT_COUNTER,
+      payload: null
+    }
+   
+}
 
-export const resetCounter = () => ({ type: typesCounter.RESET_COUNTER });
+export const decrementCounter = () => {
+    
+    return {
+        type: typesCounter.DECREMENT_COUNTER,
+        payload: null
+    }
+}
+
+export const resetCounter = () => {
+   
+    return {
+        type: typesCounter.RESET_COUNTER,
+        payload: null
+    }
+
+}
 
 
 
