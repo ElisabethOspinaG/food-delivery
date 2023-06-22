@@ -10,10 +10,25 @@ import rest1 from '../assets/img/home/rest1.png';
 import rest2 from '../assets/img/home/rest2.png';
 import rest3 from '../assets/img/home/rest3.png';
 import rest4 from '../assets/img/home/rest4.png';
+import React, { useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+import { actionGetPaletasAsync } from "../redux/actions/actions";
+import FilterButtons from "./FilterButtons";
+
+
+
 
 
 const Home = () => {
 
+  const dispatch = useDispatch();
+  const { paletas } = useSelector((store) => store.paletasStore);
+
+  useEffect(() => {
+    dispatch(actionGetPaletasAsync());
+  }, [dispatch]);
+  console.log(paletas);
     const restuarant = [
         {
             restaurantId: 1,

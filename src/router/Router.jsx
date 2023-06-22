@@ -1,4 +1,4 @@
-// import React from 'react'
+// // import React from 'react'
 // import SearchPage from '../pages/SearchPage'
 // const Router = () => {
 //   return (
@@ -14,10 +14,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DashboardRouter from "./DashboardRouter";
 import PrivateRouter from "./PrivateRouter";
 import PublicRouter from "./PublicRouter";
-import Login from "../components/Login";
-import Register from "../components/Register";
+import Login from "../pages/Login.jsx";
+import Register from "../pages/Register";
 import { auth } from "../Firebase/firebaseConfig";
-import NavigationBar from "../components/NavigationBar";
+import NavigationBar from "../pages/NavigationBar";
 
 const Router = () => {
   const [cheking, setCheking] = useState(true);

@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { paletasReducer } from "../reducers/restaurantesReducer";
-
+import { userReducer } from "../reducers/userReducer";
 
 
 const reducer = {
-  user:userReducer,
+  userStore:userReducer,
   paletasStore: paletasReducer,
 };
 
