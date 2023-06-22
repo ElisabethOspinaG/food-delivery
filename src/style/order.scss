@@ -11,8 +11,7 @@ height: 16px;
 left: 163px;
 top: 56px;
 margin: 0;
-@include Texto( $gray5, $gray2,$s20, 
-$s14);
+@include Texto( $gray5, $gray2, $s20, $s14);
 color:$gray5;
 
     }
@@ -221,9 +220,9 @@ border-radius: 10px;
 }
 input::placeholder,
 textarea::placeholder {
-    @include Texto ( $gray5, $gray2,$s20, 
-    $s14);
-  color: #A7A7A7;
+  //   @include Texto ( $gray5, $gray2,$s20, 
+  //   $s14);
+  // color: #A7A7A7;
   
 }
 #orderbutton{
