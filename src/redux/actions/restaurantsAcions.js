@@ -16,7 +16,7 @@ export const actionGetRestaurantAsync = () => {
           id: doc.id,
           ...doc.data(),
         });
-        console.log(doc.id);
+        // console.log(doc.id);
         //   console.log(doc.id, " => ", doc.data());
       });
     } catch (error) {
@@ -84,7 +84,6 @@ const actionFilterRestaurantSync = (Restaurantes) => {
     },
   };
 };
-
 
 export const actionFilterAsync = (searchParam) => {
   return async (dispatch) => {

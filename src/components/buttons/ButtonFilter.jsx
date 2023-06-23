@@ -1,102 +1,90 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import hamburguer from '../../assets/img/home/hamburguer.svg';
 import pizza from '../../assets/img/home/pizza.svg';
 import "./styleButtons.scss"
-import { useDispatch, useSelector } from 'react-redux';
-import { actionGetRestaurantAsync } from '../../redux/actions/restaurantsAcions';
+import { useDispatch } from 'react-redux';
+import { actionFilterRestaurantAsync, actionGetRestaurantAsync } from '../../redux/actions/restaurantsAcions';
 
 const ButtonFilter = () => {
+  
+  const category= [
+   
+    {
+      value: 1,
+        name:'Fast Food',
+        img: hamburguer,
+        active: false
+    },
+    {
+      value: 2,
+        name:'Pizzas',
+        img: pizza,
+        active: false
+    },
+    {
+        value: 3,
+        name:'Sea food',
+        img: pizza,
+        active: false
+    },
+    {
+        value: 4,
+        name:'Mexica food',
+        img: pizza,
+        active: false
+    },
+    {
+        value: 5,
+        name:'Salad',
+        img: pizza,
+        active: false 
+    },
 
-    // const [buttonCategory, setButtonCategory] = useState([]);
-    const dispatch = useDispatch();
-    const {restaurants} = useSelector((store)=> store.restaurantStore);
+   {
+        value: 6,
+        name:'Meats',
+        img: pizza,
+        active: false
+   },
+   {
+        value: 7,
+        name:'Coffee',
+        img: pizza,
+        active: false
+   },
+   {
+        value: 8,
+        name:'Drinks',
+        img: pizza,
+        active: false
+   }
     
-
-    useEffect(() => {
-      console.log(restaurants)
-        dispatch(actionGetRestaurantAsyncc());
-        console.log(restaurants)
-       
-        }, [dispatch]);
-    
-    const category= [
-        {
-            id: 1,
-            name:'All',
-            img: "",
-            active: true
-        },
-        {
-            id: 2,
-            name:'Fast Food',
-            img: hamburguer,
-            active: false
-        },
-        {
-            id: 3,
-            name:'Pizzas',
-            img: pizza,
-            active: false
-        },
-        {
-            id: 4,
-            name:'Sea food',
-            img: pizza,
-            active: false
-        },
-        {
-            id: 5,
-            name:'Mexica food',
-            img: pizza,
-            active: false
-        },
-        {
-            id: 6,
-            name:'Salad',
-            img: pizza,
-            active: false 
-        },
-
-       {
-        id: 7,
-            name:'Meats',
-            img: pizza,
-            active: false
-       },
-       {
-            id: 8,
-            name:'Coffee',
-            img: pizza,
-            active: false
-       },
-       {
-            id: 9,
-            name:'Drinks',
-            img: pizza,
-            active: false
-       }
-        
-    ]   
-
-    // const handleButtonClick = (item) => {
-    //     buttonCategory = category; 
-    //     const updatedCategory = category.map((element) => {
-    //       if (element.id === item.id) {
-    //         return { ...element, active: true };
-    //       } else {
-    //         return { ...element, active: false };
-    //       }
-    //     });
-    //     setButtonCategory(updatedCategory);
-    //   };
+]
+  const dispatch = useDispatch();
+  const onFiltered = (searchValue) => {
+    const searchParam = "category";
+    dispatch(actionFilterRestaurantAsync(searchParam, searchValue));
+  };
     
   return (
     <>
+        <button
+            className= "button__filter"
+            onClick={() => {
+              dispatch(actionGetRestaurantAsync());
+            }}
+        >
+          <span className='button__text' >
+                Todas
+            </span>
+        </button>
         {category.map((item) =>(
           <button
           className={`button__filter ${item.active ? 'button__filter-active' : ''}`}
-          key={item.id}
-        //   onClick={() => handleButtonClick(item)}
+          key={item.value}
+          onClick={() => {
+            onFiltered(item.name);
+          }}
           >
             <figure className='button__figure'>
             <img src={item.img} alt="" />
