@@ -22,7 +22,7 @@ const AppRoutes = () => {
         <Route path="home" element={<Home/>} />
         <Route path="search" element={<SearchPage/>} />
         <Route path="order" element={<OrderPlaced/>} />
-        <Route path="user" element={<LoginUser/>} />
+       
         <Route path="admin" element={<LoginAdministrator/>} />
         <Route path="profile" element={<Profile/>} />
         <Route path="comments" element={<Comments/>} />
@@ -33,3 +33,4 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
+

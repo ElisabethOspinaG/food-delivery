@@ -1,4 +1,4 @@
-import React from 'react';
+
 import "../style/styleHome.scss";
 import LayoutHome from '../components/layout/LayoutHome';
 import location from '../assets/img/home/Location.svg';
@@ -11,9 +11,9 @@ import rest2 from '../assets/img/home/rest2.png';
 import rest3 from '../assets/img/home/rest3.png';
 import rest4 from '../assets/img/home/rest4.png';
 
-// import { useDispatch, useSelector } from "react-redux";
-// import { actionGetPaletasAsync } from "../redux/actions/actions";
-// import FilterButtons from "./FilterButtons";
+import { useDispatch, useSelector } from "react-redux";
+import { actionGetPaletasAsync } from "../redux/actions/actions";
+
 
 const Home = () => {
 

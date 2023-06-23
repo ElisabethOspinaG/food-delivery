@@ -21,7 +21,7 @@ import {
     }
   };
   
-  const RegisterActionSync = (newUser, error) => {
+ export const RegisterActionSync = (newUser, error) => {
     return {
       type: userTypes.CREATE_USER,
       payload: {
@@ -31,19 +31,6 @@ import {
     }
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
   export const actionLoginAsync = ({ email, password }) => {
     return (dispatch) => {
       signInWithEmailAndPassword(auth, email, password)
