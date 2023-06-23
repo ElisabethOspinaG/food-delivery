@@ -16,6 +16,7 @@ export const actionGetRestaurantAsync = () => {
           id: doc.id,
           ...doc.data(),
         });
+        console.log(doc.id);
         //   console.log(doc.id, " => ", doc.data());
       });
     } catch (error) {
@@ -29,9 +30,8 @@ export const actionGetRestaurantAsync = () => {
 const actionGetRestaurantsSync = (Restaurantes) => {
   return {
     type: restaurantsTypes.RESTAURANTS_GET,
-    payload: {
-        Restaurantes: Restaurantes,
-    },
+    payload:Restaurantes,
+    
   };
 };
 
