@@ -127,3 +127,15 @@ color: $color;
          align-items: center;
          justify-content: space-between;
       }
+      @mixin Texto3 ( $gray5, $gray2,$s20, 
+      $s14,$s10) {
+          color: $gray5;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 300;
+          font-size: $s14;
+          line-height: 16px;
+          text-align: center;
+          margin: 0px;
+        }
+  
