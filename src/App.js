@@ -1,13 +1,9 @@
-import AppRoutes from "./components/router/AppRoutes";
-
-
-
 
 function App() {
   return (
   
       <div className="App">
-          <AppRoutes/>
+  
       </div>
    
   );

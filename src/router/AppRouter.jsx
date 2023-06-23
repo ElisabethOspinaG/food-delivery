@@ -4,7 +4,7 @@ import Register from '../pages/Register';
 import PublicRouter from './PublicRouter';
 import PrivateRouter from './PrivateRouter';
 import Layout from '../pages/Layout';
-import LoginUser from '../pages/LoginUser';
+
 import Home from '../pages/Home';
 import RestaurantPage from '../pages/RestaurantPage';
 import StartPage from '../pages/StartPage';
@@ -24,8 +24,8 @@ const AppRouter = () => {
                 <Route path="/" element={<Layout />}>
                     <Route element={<PublicRouter isAutentication={isLoggedIn} />}>
                         <Route path="start" element={<StartPage />} />
-                        <Route index element={<LoginUser />} />
-                        <Route path="Register" element={<Register />} />
+              
+                        <Route path="Register" index element={<Register />} />
                         <Route path="admin" element={<LoginAdministrator />} />
                     </Route>
                     <Route element={<PrivateRouter isAutentication={isLoggedIn} />}>

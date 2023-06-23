@@ -5,7 +5,6 @@ import Home from '../../pages/Home';
 import StartPage from '../../pages/StartPage';
 import SearchPage from '../../pages/SearchPage';
 import OrderPlaced from '../../pages/OrderPlaced';
-import LoginUser from '../../pages/LoginUser';
 import LoginAdministrator from '../../pages/LoginAdministrator';
 import Comments from "../../pages/Comments";
 import NoFound from '../../pages/NoFound';
@@ -22,7 +21,7 @@ const AppRoutes = () => {
         <Route path="home" element={<Home/>} />
         <Route path="search" element={<SearchPage/>} />
         <Route path="order" element={<OrderPlaced/>} />
-        <Route path="user" element={<LoginUser/>} />
+       
         <Route path="admin" element={<LoginAdministrator/>} />
         <Route path="profile" element={<Profile/>} />
         <Route path="comments" element={<Comments/>} />
@@ -32,4 +31,4 @@ const AppRoutes = () => {
   );
 };
 
-// // export default AppRoutes;
+export default AppRoutes;

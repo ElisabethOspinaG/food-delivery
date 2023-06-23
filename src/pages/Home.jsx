@@ -1,4 +1,4 @@
-import React from 'react';
+
 import "../style/styleHome.scss";
 import LayoutHome from '../components/layout/LayoutHome';
 import location from '../assets/img/home/Location.svg';
@@ -14,7 +14,7 @@ import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { actionGetPaletasAsync } from "../redux/actions/actions";
-import FilterButtons from "./FilterButtons";
+
 
 
 

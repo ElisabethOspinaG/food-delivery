@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useDispatch } from 'react-redux';
-import { actionRegisterAsync } from '../redux/actions/userActions';
+import { registerAccionAsync } from '../redux/actions/userActions';
 
 const schema = yup.object().shape({
   name: yup.string().required('Name is required'),
@@ -36,7 +36,7 @@ const onUpLoadImage = async (image) => {
       password: data.password,
       avatar: photoURL
     }
-    dispatch(actionRegisterAsync(user));
+    dispatch(registerAccionAsync(user));
     if (error) {
       Swal.fire("Oops!", `Ha ocurrido un error: ${errorMessage}`, "error");
     } else {
