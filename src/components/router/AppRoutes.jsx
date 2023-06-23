@@ -10,6 +10,7 @@ import Comments from "../../pages/Comments";
 import NoFound from '../../pages/NoFound';
 import Location from '../../pages/Location';
 import Profile from '../../pages/Profile';
+import Register from '../../pages/Register';
 
 const AppRoutes = () => {
   return (
@@ -21,7 +22,7 @@ const AppRoutes = () => {
         <Route path="home" element={<Home/>} />
         <Route path="search" element={<SearchPage/>} />
         <Route path="order" element={<OrderPlaced/>} />
-       
+        <Route path="register" element={<Register/>} />
         <Route path="admin" element={<LoginAdministrator/>} />
         <Route path="profile" element={<Profile/>} />
         <Route path="comments" element={<Comments/>} />

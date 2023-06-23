@@ -1,10 +1,4 @@
-import {
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    signInWithPopup,
-    signOut,
-    updateProfile,
-  } from "firebase/auth";
+import {  createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
   import { auth } from "../../Firebase/firebaseConfig";
   import { userTypes } from "../types/userTypes";
   
@@ -21,40 +15,40 @@ import {
     }
   };
   
- export const RegisterActionSync = (newUser, error) => {
+  
+  export const RegisterActionSync = (newUser, error) => {
     return {
-      type: userTypes.CREATE_USER,
+      type: userTypes.USER_REGISTER,
       payload: {
         user: newUser,
         error: error,
-      }
-    }
-  }
+      },
+    };
+  };
+  
+
   
   export const actionLoginAsync = ({ email, password }) => {
     return (dispatch) => {
       signInWithEmailAndPassword(auth, email, password)
-        .then(({ user }) => {
-          const { displayName, accessToken, photoURL, phoneNumber } =
-            user.auth.currentUser;
-          dispatch(
-            actionLoginSync({
-              email,
-              name: displayName,
-              accessToken,
-              photoURL,
-              phoneNumber,
-              error: false,
-            })
-          );
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorCode);
-          console.log(errorMessage);
-          dispatch(actionLoginSync({ email, error: true, errorMessage }));
-        });
+  .then((userCredential) => {
+    const user = userCredential.user;
+    const { displayName, accessToken, photoURL, phoneNumber } = user;
+    dispatch(
+      actionLoginSync({
+        email,
+        name: displayName,
+        accessToken,
+        // photoURL,
+        phoneNumber,
+        error: false,
+      })
+    );
+  })
+  .catch((error) => {
+    // Error handling code
+  });
+
     };
   };
   
@@ -88,21 +82,20 @@ import {
   export const actionLoginGoogleOrFacebook = (provider) => {
     return (dispatch) => {
       signInWithPopup(auth, provider)
-        .then((result) => {
-          const { displayName, accessToken, photoURL, phoneNumber, email } =
-            result.user;
-          console.log(result.user);
-          dispatch(
-            actionLoginSync({
-              email,
-              name: displayName,
-              accessToken,
-              photoURL,
-              phoneNumber,
-              error: false,
-            })
-          );
-        })
+      .then((result) => {
+        const user = result.user;
+        const { displayName, accessToken, photoURL, phoneNumber, email } = user;
+        dispatch(
+          actionLoginSync({
+            email,
+            name: displayName,
+            accessToken,
+            // photoURL,
+            phoneNumber,
+            error: false,
+          })
+        );
+      })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;

@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useEffect}from 'react';
 import "../style/restaurantPage.scss";
 import { FaStar } from 'react-icons/fa';
-
+import { useDispatch,useSelector } from 'react-redux';
+import {actionGetRestaurantAsync} from "../redux/actions/restaurantsAcions";
 const RestaurantPage = () => {
+  const dispatch=useDispatch();
+  const {restaurants}=useSelector((store)=>store.restaurantStore)
   const rating = 1;
   console.log(rating);
-
+useEffect(()=>{
+  
+  dispatch(actionGetRestaurantAsync())
+},[dispatch]); console.log(restaurants); 
   const StarRating = ({ rating }) => {
     const getStarColor = (starIndex) => {
       if (starIndex < rating) {
@@ -32,7 +38,7 @@ const RestaurantPage = () => {
       <div className='container'>
         <button className="container__button">&lt; &nbsp;&nbsp;</button>
       </div>
-      <img className="container__logo" src="https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw&r=0"></img>
+      <img className="container__logo" src="{}"></img>
       <img className="container__logo2" src="https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw&r=0"></img>
       <figure className='container__figure'>
         <img className='container__image' src="https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw&r=0"></img>
@@ -56,11 +62,14 @@ const RestaurantPage = () => {
           <button id="button4">Meats</button>
         </div>
       </div>
-      <div className='container__container' id="container1">
+      <div className='container__map'>
+         <div className='container__container' id="container1">
         <img className="container__dish" src="https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw&r=0"></img>
-        <h1>Pardes Restaurant</h1>
+        <h1></h1>
         <h2>5-55</h2>
       </div>
+      </div>
+     
       <div className='container__container' id="container2">
         <img className="container__dish" src="https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw&r=0"></img>
         <h1>Pardes Restaurant</h1>
@@ -71,21 +80,7 @@ const RestaurantPage = () => {
         <h1>Pardes Restaurant</h1>
         <h2>5-55</h2>
       </div>
-      <div className='container__container' id="container4">
-        <img className="container__dish" src="https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw&r=0"></img>
-        <h1>Pardes Restaurant</h1>
-        <h2>5-55</h2>
-      </div>
-      <div className='container__container' id="container5">
-        <img className="container__dish" src="https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw&r=0"></img>
-        <h1>Pardes Restaurant</h1>
-        <h2>5-55</h2>
-      </div>
-      <div className='container__container' id="container6">
-        <img className="container__dish" src="https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw&r=0"></img>
-        <h1>Pardes Restaurant</h1>
-        <h2>5-55</h2>
-      </div>
+
 
 
     </div>

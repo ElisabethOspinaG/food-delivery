@@ -4,12 +4,12 @@ const initialState = {
     restaurants: [],
 }
 
-const restaurantReducer = (state = initialState, action) =>{
+export const restaurantReducer = (state = initialState, action) =>{
     switch (action.type) {
         case restaurantsTypes.RESTAURANTS_GET:
             return {
                 ...state,
-                restaurants: action.payload.restaurants,
+                restaurants: action.payload,
             };
         case restaurantsTypes.RESTAURANTS_ADD:
             return {
@@ -26,5 +26,5 @@ const restaurantReducer = (state = initialState, action) =>{
     }
 }
 
-export default restaurantReducer
+ restaurantReducer
 
