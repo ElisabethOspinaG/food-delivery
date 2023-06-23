@@ -2,10 +2,22 @@ import React, { useState } from 'react'
 import hamburguer from '../../assets/img/home/hamburguer.svg';
 import pizza from '../../assets/img/home/pizza.svg';
 import "./styleButtons.scss"
+import { useDispatch, useSelector } from 'react-redux';
+import { actionGetRestaurantAsync } from '../../redux/actions/restaurantsAcions';
 
 const ButtonFilter = () => {
 
     // const [buttonCategory, setButtonCategory] = useState([]);
+    const dispatch = useDispatch();
+    const {restaurants} = useSelector((store)=> store.restaurantStore);
+    
+
+    useEffect(() => {
+      console.log(restaurants)
+        dispatch(actionGetRestaurantAsyncc());
+        console.log(restaurants)
+       
+        }, [dispatch]);
     
     const category= [
         {
