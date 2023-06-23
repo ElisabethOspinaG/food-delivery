@@ -9,25 +9,15 @@ import { registerAccionAsync } from '../redux/actions/userActions';
 import { useSelector } from 'react-redux';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
+
 // import { fileUpLoad } from '../services/fileUpload'; 
 
 
 const Register = () => {
-  
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    city: '',
-    address: '',
-    avatar: ''
-  });
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const navigate = useNavigate();
+
+
   // const onUpLoadImage = async (event) => {
   //   const file = event.target.files[0];
   //   const imageUrl = await fileUpLoad(file);
@@ -57,6 +47,9 @@ const Register = () => {
       // avatar: photoURL,
     };
     dispatch(registerAccionAsync(user));
+    // Dentro de tu función de acción
+navigate('/user');
+
     if (error) {
       Swal.fire("Oops!", `Ha ocurrido un error: ${errorMessage}`, "error");
     } else {

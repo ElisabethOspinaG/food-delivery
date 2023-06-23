@@ -84,6 +84,7 @@ import {  createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWith
       signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
+        console.log(user);
         const { displayName, accessToken, photoURL, phoneNumber, email } = user;
         dispatch(
           actionLoginSync({

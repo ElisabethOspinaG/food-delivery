@@ -11,7 +11,7 @@ import NoFound from '../../pages/NoFound';
 import Location from '../../pages/Location';
 import Profile from '../../pages/Profile';
 import Register from '../../pages/Register';
-
+import Login from '../../pages/Login';
 const AppRoutes = () => {
   return (
     <Router>
@@ -22,8 +22,9 @@ const AppRoutes = () => {
         <Route path="home" element={<Home/>} />
         <Route path="search" element={<SearchPage/>} />
         <Route path="order" element={<OrderPlaced/>} />
-        <Route path="register" element={<Register/>} />
+        <Route index path="register" element={<Register/>} />
         <Route path="admin" element={<LoginAdministrator/>} />
+        <Route path="user" element={<Login/>}/>
         <Route path="profile" element={<Profile/>} />
         <Route path="comments" element={<Comments/>} />
         <Route path="noFound" element={<NoFound/>} />

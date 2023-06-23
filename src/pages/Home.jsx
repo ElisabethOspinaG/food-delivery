@@ -16,10 +16,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { actionGetPaletasAsync } from "../redux/actions/actions";
 
 
-
-
-
-
 const Home = () => {
 
   const dispatch = useDispatch();

@@ -8,7 +8,7 @@ const DashboardRouter = () => {
     <Routes>
       <Route path="/home" element={<Home />} />
       <SearchPage path="/search"></SearchPage>
-      <Route path="/addPaletas" element={<AddPaletas />} />
+
     </Routes>
   );
 };

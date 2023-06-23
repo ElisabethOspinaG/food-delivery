@@ -44,8 +44,8 @@ const Router = () => {
       <NavigationBar isAutentication={isLoggedIn} />
       <Routes>
         <Route element={<PublicRouter isAutentication={isLoggedIn} />}>
-          <Route path="/Register" element={<Register />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/user" element={<Login />} />
         </Route>
         <Route element={<PrivateRouter isAutentication={isLoggedIn} />}>
           <Route path="/*" element={<DashboardRouter />} />
