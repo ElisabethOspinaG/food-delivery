@@ -1,0 +1,21 @@
+[debug] [2023-06-22T00:49:20.667Z] ----------------------------------------------------------------------
+[debug] [2023-06-22T00:49:20.685Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\LAPTOP\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-06-22T00:49:20.686Z] CLI Version:   12.4.0
+[debug] [2023-06-22T00:49:20.686Z] Platform:      win32
+[debug] [2023-06-22T00:49:20.686Z] Node Version:  v19.6.1
+[debug] [2023-06-22T00:49:20.687Z] Time:          Wed Jun 21 2023 19:49:20 GMT-0500 (hora estándar de Colombia)
+[debug] [2023-06-22T00:49:20.687Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-22T00:49:20.701Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-22T00:49:20.702Z] > authorizing via signed-in user (guaiagaleria@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\LAPTOP\Downloads\MAKAIA\Nueva carpeta (3)\food-delivery
+

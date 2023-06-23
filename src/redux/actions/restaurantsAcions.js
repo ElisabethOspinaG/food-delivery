@@ -104,7 +104,7 @@ export const actionFilterAsync = (searchParam) => {
       const filteredRestaurants = Restaurantes.filter((item) =>
         item.name.toLowerCase().includes(searchParam.toLowerCase())
       );
-      dispatch(actionFilterRestaurantSync(filterdPaletas));
+      // dispatch(actionFilterRestaurantSync(filterdPaletas));
     } catch (error) {
       console.error(error);
       dispatch(actionFilterRestaurantSync([]));

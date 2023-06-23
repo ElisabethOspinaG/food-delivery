@@ -17,10 +17,13 @@ const Home = () => {
 
     const dispatch = useDispatch();
     const {restaurants} = useSelector((store)=> store.restaurantStore);
+    
 
     useEffect(() => {
       console.log(restaurants)
         dispatch(actionGetRestaurantAsync());
+        console.log(restaurants)
+       
         }, [dispatch]);
 
     // const restuarant = [

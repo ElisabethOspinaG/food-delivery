@@ -7,4 +7,4 @@ const PrivateRouter = ({isAutentication}) => {
   )
 }
 
-export default PrivateRouter
+export default PrivateRouter;

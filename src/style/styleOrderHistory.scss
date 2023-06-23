@@ -1,0 +1,73 @@
+@import "./mixin";
+@import "./mediaQuery";
+.history{
+    @include mobile{
+      
+    height: 844px;
+   width: 390px;
+       }
+       &__div {
+         @include mobile{
+            position: absolute;
+        top: 110px;
+        left: 16px;
+        height: 44px;
+        width: 358px;
+        }
+      }
+      &__div img h1 h2 h3 button {
+        position: relative;
+      }
+    img{
+        @include mobile{
+         
+        top: 3px;
+        left: 5px;
+        }
+        width: 34px;
+        height: 41px;
+    }
+h1{
+    // @include Texto ( $gray5, $gray2,$s20, 
+    // $s14,$s10);
+    @include mobile{
+      top: 2px;
+      left:60px;
+    }
+}
+h2{
+    // @include Texto ( $gray5, $gray2,$s20, 
+    // $s14,$s10);
+    // color:$gray2;
+    @include mobile{
+      top: 26px;
+      left:60px;
+    }
+}
+h3{
+  @include mobile{
+    top: 6px;
+    left:308px;
+    font-size: $s10;
+  }
+    // @include Texto ( $gray5, $gray2,$s20, 
+    // $s14,$s10);
+   
+};
+.button{
+  @include mobile{
+    top: 12px;
+    left:357px;
+  }
+}
+
+  #all{
+    @include mobile{
+      position: absolute; 
+      left:165px;
+      top:60px;
+    }
+   
+  }
+
+}
