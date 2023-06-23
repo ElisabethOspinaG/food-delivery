@@ -7,17 +7,17 @@
    width: 390px;
        } 
      h1{
-    @include Texto ( $gray5, $gray2,$s20, 
-    $s14,$s10);
-    font-size:$s14;
+    // @include Texto ( $gray5, $gray2,$s20, 
+    // $s14,$s10);
+    // font-size:$s14;
     @include mobile{
     position: absolute;
     top:125px;
     left: 16px;}
 }
 span{
-    @include Texto ( $gray5, $gray2,$s20, 
-    $s14,$s10);
+    // @include Texto ( $gray5, $gray2,$s20, 
+    // $s14,$s10);
    color:$gray2;
    
 }
@@ -52,8 +52,8 @@ span{
    position: inherit;
 }
 &__result h1{
-  @include Texto  ( $gray5, $gray2,$s20, 
-  $s14,$s10);
+  // @include Texto  ( $gray5, $gray2,$s20, 
+  // $s14,$s10);
   @include mobile{
     position:relative;
     top:2px;
@@ -62,8 +62,8 @@ span{
   }
 }
 &__result h2{
-  @include Texto  ( $gray5, $gray2,$s20, 
-  $s14,$s10);
+  // @include Texto  ( $gray5, $gray2,$s20, 
+  // $s14,$s10);
   color:$gray2;
   @include mobile{
     position:relative;

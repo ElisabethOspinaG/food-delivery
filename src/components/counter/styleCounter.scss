@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Lato:wght@900&family=Poppins:ital,wght@0,700;1,400&family=Public+Sans:ital,wght@0,100;1,500&display=swap');
+@import "../../style/style.scss";
+
+.counter {
+    width: 66px;
+    height: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+
+
+    &__buttons {
+     @include buttonSquare($gray2, $gray2, $wi66, $he22, $white, $gray5); 
+    }
+
+    &__date {
+        width: 22px;
+        height: 22px;
+        background-color: $gray2;
+        border: 2px solid $gray2;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        display: flex;
+        color: $gray5;
+        gap: 5px;
+        font-size: 20px;
+    
+        &:hover{
+            background-color: $white;
+            border: solid 2px $gray5;
+            color: $gray5;
+        }
+            
+    }
+}

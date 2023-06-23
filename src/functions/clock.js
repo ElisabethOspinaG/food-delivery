@@ -9,6 +9,7 @@ function detectarDiaYHora() {
   
     if (esFinDeSemana) {
       mensaje = 'Es fin de semana';
+      
     } else {
       mensaje = 'Es día de semana';
     }

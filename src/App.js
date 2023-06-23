@@ -7,9 +7,11 @@ import OrderHistory from "./pages/OrderHistory";
 
 function App() {
   return (
-    <div className="App">
-<SearchPage></SearchPage>
-    </div>
+    
+      <div className="App">
+          <AppRoutes/>
+      </div>
+   
   );
 }
 

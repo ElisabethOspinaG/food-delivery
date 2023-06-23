@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&family=Raleway&family=Roboto:wght@300;400;500&display=swap');
-@import "./variables";// Estilos para los textos
+@import "./variables"; // Estilos para los textos
+
 @mixin buttonSquare($bg, $bor, $wi, $he, $bgH, $borH) {
     background: $bg;
     border: 1px solid $bor;
     border-radius: 5px;
     white-space: normal;
-    min-width:  $wi;
+    min-width: $wi;
     max-width: auto;
     height: $he;
     display: flex;
@@ -15,18 +16,18 @@
     padding: 5px;
     transition: 0.5s;
     cursor: pointer;
-    
+
     &:hover {
-        background:$bgH;
+        background: $bgH;
         border: 1px solid $borH;
-        opacity:100%;
+        opacity: 100%;
     }
 }
 
-@mixin tex1($weight, $size, $line, $color){
+@mixin tex1($weight, $size, $line, $color) {
     font-family: $fontRoboto;
     font-style: normal;
-   
+
     font-weight: $weight;
     font-size: $size;
     line-height: $line;
@@ -36,19 +37,19 @@
 
 // @include tex1($weight, $size, $line, $color)
 
-@mixin tex2($weight, $color){
-font-family: $fontNunito;
-font-style: normal;
-font-weight: $weight;
-font-size: 14px;
-line-height: 19px;
+@mixin tex2($weight, $color) {
+    font-family: $fontNunito;
+    font-style: normal;
+    font-weight: $weight;
+    font-size: 14px;
+    line-height: 19px;
 
-letter-spacing: -0.3px;
-color: $color;
+    letter-spacing: -0.3px;
+    color: $color;
 }
 
 
-@mixin tex3(){
+@mixin tex3() {
     font-family: $fontRaleway;
     font-style: normal;
     font-weight: $weight;
@@ -57,73 +58,131 @@ color: $color;
     text-align: center;
     letter-spacing: -0.3px;
     color: $gray5;
+}
+
+@mixin buttonSquare2() {
+    width: 358px;
+    height: 44px;
+    background-color: $gray1;
+    padding: 5px;
+    border: 2px solid $gray1;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    gap: 10px;
+
+    &:hover {
+        background-color: $white;
+        border: solid 2px $gray4;
+
+    }
+}
+
+;
+
+@mixin buttonRound() {
+    width: 22px;
+    height: 22px;
+    background-color: $gray2;
+    border: 2px solid $gray2;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    display: flex;
+    color: $gray5;
+    gap: 5px;
+    font-size: 16px;
+
+    &:hover {
+        background-color: $white;
+        border: solid 2px $gray5;
+        color: $gray5;
     }
 
-    @mixin buttonSquare2(){
-        width: 358px;
-        height: 44px;
-        background-color:$gray1;
-        padding: 5px;
-        border: 2px solid $gray1;
-        border-radius: 10px;
-        cursor: pointer;
-        padding: 10px;
-        transition: 0.5s;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 10px;
-        gap: 10px;
-        &:hover{
-            background-color: $white;
-            border: solid 2px $gray4;
-            
-        }
-    }; 
-  
-    @mixin buttonSquare3(){
+}
 
-        height: 44px;
-        background-color:$gray1;
-        padding: 5px;
-        border: 2px solid $gray1;
-        border-radius: 10px;
-        cursor: pointer;
-        padding: 10px;
-        transition: 0.5s;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 10px;
-        gap: 10px;
-        &:hover{
-            background-color: $yellow;
-            border: solid 2px $yellow;
-            
-        }
-    }; 
-  
-    
+;
+
+@mixin buttonSquare3() {
+
+    height: 44px;
+    background-color: $gray1;
+    padding: 5px;
+    border: 2px solid $gray1;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    gap: 10px;
+
+    &:hover {
+        background-color: $yellow;
+        border: solid 2px $yellow;
+
+    }
+}
 
 
-    @mixin Texto ( $gray5, $gray2,$s20, 
-    $s14,$s10) {
-        color: $gray5;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: $s14;
-        line-height: 16px;
-        text-align: center;
-        margin: 0px;
-      }
-      @mixin div (){
-        position: absolute;
-        padding: 16px;
-         height: 44px;
-         width:390px;
-         display: flex;
-         flex-direction: row;
-         align-items: center;
-         justify-content: space-between;
-      }
+
+
+
+// @mixin buttonSquare($width, $backgraund, $border, $color, $hoverBagra, $hoverBorder, $hoverColor){
+//     width: $width;
+//     height: 3.5rem;
+//     background-color:$backgraund;
+//     color: $color;
+//     border: 2px solid  $border;
+//     border-radius: 0.5rem;
+//     cursor: pointer;
+//     font-weight: 400px;
+//     font-size: 1rem;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     transition: 0.5s;
+//     font-family: $title;
+//     display: flex;
+//     justify-content: space-between;
+
+//     &:hover{
+//         background-color: $hoverBagra;
+//         border: solid 2px $hoverBorder;
+//         color: $hoverColor;
+//     }
+// };
+
+@mixin Texto () {
+    color: $gray5;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: $s14;
+    line-height: 16px;
+    text-align: center;
+    margin: 0px;
+}
+
+@mixin div () {
+    position: absolute;
+    padding: 16px;
+    height: 44px;
+    width: 390px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
