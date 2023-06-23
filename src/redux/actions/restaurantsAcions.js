@@ -19,6 +19,8 @@ export const actionGetRestaurantAsync = () => {
         // console.log(doc.id);
         //   console.log(doc.id, " => ", doc.data());
       });
+      
+    console.log("all restaurants", Restaurantes)
     } catch (error) {
       console.error(error);
     } finally {
@@ -55,35 +57,39 @@ const actionAddRestaurantSync = (Restaurantes) => {
   };
 };
 
-export const actionFilterRestaurantAsync = (searchParam, searchValue) => {
+export const actionFilterRestaurantAsync = (searchValue) => {
+  console.log("searchValue ", searchValue );
   return async (dispatch) => {
     const restaurantCollection = collection(dataBase, collectionName);
-    const q = query(restaurantCollection, where(searchParam, "==", searchValue));
-    const Restaurantes = [];
+    const q = query(restaurantCollection, where("platos", 'array-contains', searchValue ));
+    const restaurantes = [];
     try {
       const querySnapshot = await getDocs(q);
+      console.log("infor query: ", querySnapshot );
       querySnapshot.forEach((doc) => {
-        Restaurantes.push({
+        restaurantes.push({
           id: doc.id,
           ...doc.data(),
         });
       });
+      console.log("restaurante", restaurantes) 
     } catch (error) {
       console.log(error);
     } finally {
-      dispatch(actionFilterRestaurantSync(Restaurantes));
+      dispatch(actionFilterRestaurantSync(restaurantes));
     }
   };
 };
 
-const actionFilterRestaurantSync = (Restaurantes) => {
+const actionFilterRestaurantSync = (restaurantes) => {
   return {
     type: restaurantsTypes.RESTAURANTS_FILTERED,
     payload: {
-        Restaurantes: Restaurantes,
+        Restaurantes: restaurantes,
     },
   };
 };
+
 
 export const actionFilterAsync = (searchParam) => {
   return async (dispatch) => {

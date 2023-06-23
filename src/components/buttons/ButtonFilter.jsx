@@ -10,51 +10,51 @@ const ButtonFilter = () => {
   const category= [
    
     {
-      value: 1,
+        value: 1,
         name:'Fast Food',
         img: hamburguer,
         active: false
     },
     {
       value: 2,
-        name:'Pizzas',
+        name:'pizza',
         img: pizza,
         active: false
     },
     {
         value: 3,
-        name:'Sea food',
+        name:'dessert',
         img: pizza,
         active: false
     },
     {
         value: 4,
-        name:'Mexica food',
+        name:'international',
         img: pizza,
         active: false
     },
     {
         value: 5,
-        name:'Salad',
+        name:'salad',
         img: pizza,
         active: false 
     },
 
    {
         value: 6,
-        name:'Meats',
+        name:'meats',
         img: pizza,
         active: false
    },
    {
         value: 7,
-        name:'Coffee',
+        name:'coffee',
         img: pizza,
         active: false
    },
    {
         value: 8,
-        name:'Drinks',
+        name:'drink',
         img: pizza,
         active: false
    }
@@ -62,8 +62,8 @@ const ButtonFilter = () => {
 ]
   const dispatch = useDispatch();
   const onFiltered = (searchValue) => {
-    const searchParam = "category";
-    dispatch(actionFilterRestaurantAsync(searchParam, searchValue));
+    // const searchParam = "category";
+    dispatch(actionFilterRestaurantAsync(searchValue));
   };
     
   return (
@@ -78,7 +78,8 @@ const ButtonFilter = () => {
                 Todas
             </span>
         </button>
-        {category.map((item) =>(
+        {
+        category.map((item) =>(
           <button
           className={`button__filter ${item.active ? 'button__filter-active' : ''}`}
           key={item.value}
