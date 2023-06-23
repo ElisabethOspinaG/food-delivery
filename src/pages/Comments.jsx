@@ -1,9 +1,12 @@
 import React from 'react'
+import CounterProducts from '../components/counter/CounterProducts'
+import Container from '../components/container/Container'
 
 const Comments = () => {
   return (
     <>
-        <h1>Comments</h1>
+        <CounterProducts/>
+        <Container/>
     </>
   )
 }

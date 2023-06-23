@@ -1,20 +1,21 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { paletasReducer } from "../reducers/restaurantesReducer";
-import { userReducer } from "../reducers/userReducer";
-
-
-const reducer = {
-  userStore:userReducer,
-  paletasStore: paletasReducer,
+import userReducer from "../reducers/userReducers";
+import { counterReducer } from "../reducers/counterReducer";
+import restaurantsReducer from "../reducers/restaurantsReducer";
+ 
+const reducer ={
+   user: userReducer,
+   counter: counterReducer,
+   restaurantStore: restaurantsReducer,
 };
 
 const store = configureStore({
-  reducer,
-  devTool: process.env.NODE_ENV !== "production",
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: false,
-    }),
+   reducer,
+   devTool: process.env.NODE_ENV !== "production",
+   middleware:(getDefaultMiddleware)=>
+   getDefaultMiddleware({
+      serializableCheck:false,
+   }),
 });
 
 export default store;
