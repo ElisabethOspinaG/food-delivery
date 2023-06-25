@@ -3,16 +3,22 @@ import "../style/restaurantPage.scss";
 import { FaStar } from 'react-icons/fa';
 import { useDispatch,useSelector } from 'react-redux';
 import {actionGetRestaurantAsync} from "../redux/actions/restaurantsAcions";
+
+import { useParams } from "react-router-dom";
+
+
+
 const RestaurantPage = () => {
   const dispatch=useDispatch();
-  const {restaurants}=useSelector((store)=>store.restaurantStore)
+  const {Restaurantes}=useSelector((store)=>store.restaurantStore)
+ const { id } = useParams();
   const rating = 1;
   console.log(rating);
 useEffect(()=>{
-  
   dispatch(actionGetRestaurantAsync())
-},[dispatch]); console.log(restaurants); 
-  const StarRating = ({ rating }) => {
+},[dispatch]); 
+const selectedRestaurant = restaurants.find((restaurant) => restaurant.id === id);
+ const StarRating = ({ rating }) => {
     const getStarColor = (starIndex) => {
       if (starIndex < rating) {
         return '#FFE031'; // Estilo para estrellas seleccionadas (color dorado)
@@ -32,8 +38,11 @@ useEffect(()=>{
       </div>
     );
   };
-
-  return (
+    const infoRestaurant = Restaurantes.length > 0 ? Restaurantes[0] : null;
+    console.log(infoRestaurant);
+    if (!selectedRestaurant) {
+      return <div>Loading...</div>;
+    } return (
     <div >
       <div className='container'>
         <button className="container__button">&lt; &nbsp;&nbsp;</button>
@@ -63,28 +72,36 @@ useEffect(()=>{
         </div>
       </div>
       <div className='container__map'>
-         <div className='container__container' id="container1">
-        <img className="container__dish" src="https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw&r=0"></img>
-        <h1></h1>
-        <h2>5-55</h2>
-      </div>
-      </div>
-     
-      <div className='container__container' id="container2">
-        <img className="container__dish" src="https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw&r=0"></img>
-        <h1>Pardes Restaurant</h1>
-        <h2>5-55</h2>
-      </div>
-      <div className='container__container' id="container3">
-        <img className="container__dish" src="https://th.bing.com/th/id/R.c22277a451f43346b2ab3fb59ceadf3c?rik=prmM3D5YO7VFRQ&pid=ImgRaw&r=0"></img>
-        <h1>Pardes Restaurant</h1>
-        <h2>5-55</h2>
-      </div>
-
-
-
+      {selectedRestaurant && (
+            <div id="OneRestaurant" key={infoRestaurant.id}>
+              <img src={infoRestaurant.imagenRestaurante} alt={infoRestaurant.nombre} />
+              <span>{infoRestaurant.abierto}</span>
+              <span>{infoRestaurant.calificacion}</span>
+              <span>{infoRestaurant.descripcion}</span>
+              <span>{infoRestaurant.duracionDomicilio}</span>
+              <span>{infoRestaurant.lugar}</span>
+              <span>{infoRestaurant.nombre}</span>
+  
+              <div>
+                {infoRestaurant.platos && infoRestaurant.platos.length > 0 && infoRestaurant.platos.map((plato, index) => (
+                  <div key={index}>
+                    <span>{plato.nombrePlato ? plato.nombrePlato : ''}</span>
+                    <span>{plato.descripcionPlato}</span>
+                    <span>{plato.precioPlato}</span>
+                    <span>{plato.precioPeparacion}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+                
+              </div>
     </div>
   );
 };
 
 export default RestaurantPage;
+
+
+
+

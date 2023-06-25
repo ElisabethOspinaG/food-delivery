@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
@@ -9,21 +8,12 @@ import { registerAccionAsync } from '../redux/actions/userActions';
 import { useSelector } from 'react-redux';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
-
-// import { fileUpLoad } from '../services/fileUpload'; 
-
-
+import AvatarUpload from "../components/AvatarUpload";
+import "../style/registerStyle.scss";
 const Register = () => {
-  const navigate = useNavigate();
-
-
-  // const onUpLoadImage = async (event) => {
-  //   const file = event.target.files[0];
-  //   const imageUrl = await fileUpLoad(file);
-  //   console.log(imageUrl);}
-  // const photoURL = await onUpLoadImage(data.photo[0]);
+  const [avatar, setAvatar] = useState("");
   const dispatch = useDispatch();
+
   const schema = yup.object().shape({
     name: yup.string().required('Name is required'),
     email: yup.string().email('Invalid email').required('Email is required'),
@@ -38,61 +28,72 @@ const Register = () => {
   const { error, errorMessage } = useSelector((store) => store.user);
 
   const onSubmit = async (data) => {
-   
-
     const user = {
       name: data.name,
       email: data.email,
       password: data.password,
-      // avatar: photoURL,
+      avatar: avatar, // Use the avatar value from state
     };
+
+    // Dispatch the action with the user data
     dispatch(registerAccionAsync(user));
-    // Dentro de tu función de acción
-navigate('/user');
 
     if (error) {
       Swal.fire("Oops!", `Ha ocurrido un error: ${errorMessage}`, "error");
     } else {
-      Swal.fire("Good job!", "Tu cuenta se ha creado exitosamente!", "success" );
+      Swal.fire("Good job!", "Tu cuenta se ha creado exitosamente!", "success");
     }
-    return console.log(user)
+
+    console.log(user);
+    console.log(user.avatar);
   };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      <Form.Group controlId="formName">
+    <Form className='form' onSubmit={handleSubmit(onSubmit)}>
+      <h1>Create account</h1>
+      <Form.Group controlId="formName"className="form-group">
         <Form.Label>Name</Form.Label>
-        <Form.Control type="text" placeholder="Enter name" {...register('name')} />
+        <div className="form-input-container"><Form.Control type="text" placeholder="Enter name"  className="placeholder-input"{...register('name')} />
         {errors.name && <Form.Text className="text-danger">{errors.name.message}</Form.Text>}
-      </Form.Group>
+      </div></Form.Group>
 
-      <Form.Group controlId="formEmail">
+      <Form.Group controlId="formEmail"className="form-group">
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" {...register('email')} />
+        <div className="form-input-container"><Form.Control type="email" placeholder="Enter email"  className="placeholder-input"{...register('email')} />
         {errors.email && <Form.Text className="text-danger">{errors.email.message}</Form.Text>}
-      </Form.Group>
+        </div>  </Form.Group>
 
-      <Form.Group controlId="formPhone">
+      <Form.Group controlId="formPhone" className="form-group">
         <Form.Label>Phone number</Form.Label>
-        <Form.Control type="text" placeholder="Enter phone number" {...register('phone')} />
+        <div className="form-input-container">
+        <Form.Control type="text" placeholder="Enter phone number"  className="placeholder-input"{...register('phone')} />
         {errors.phone && <Form.Text className="text-danger">{errors.phone.message}</Form.Text>}
+      </div>
       </Form.Group>
-      <input type="password" name="password" {...register('password')}placeholder="Password" />
-      <input type="password"
-  name="confirmPassword"
-/>
-      <Form.Group controlId="formBirthdate">
+      <Form.Group controlId="formPassword" className="form-group">
+        <Form.Label>Password</Form.Label>
+        <div className="form-input-container">
+        <Form.Control type="password" placeholder="Enter password"  className="placeholder-input" {...register('password')} />
+        </div></Form.Group>
+      <Form.Group controlId="formConfirmPassword" className="form-group">
+        <Form.Label>Confirm Password</Form.Label>
+        <div className="form-input-container"><Form.Control type="password" placeholder="Confirm password"  className="placeholder-input" {...register('confirmPassword')} />
+        </div> </Form.Group>
+      <Form.Group controlId="formBirthdate" className="form-group">
         <Form.Label>Birthdate</Form.Label>
-        <Form.Control type="date" placeholder="Enter birthdate" {...register('birthdate')} />
+        <div className="form-input-container"> <Form.Control type="date" placeholder="Enter birthdate"  className="placeholder-input"{...register('birthdate')} />
         {errors.birthdate && <Form.Text className="text-danger">{errors.birthdate.message}</Form.Text>}
-      </Form.Group>
-<FloatingLabel label="Avatar">
-  {/* <Form.Control type="file" {...register("photo")}onChange={onUpLoadImage}></Form.Control> */}
-</FloatingLabel>
-      <Button variant="primary" type="submit">
-        Submit
+        </div> </Form.Group>
+        <div className="avatar-upload-container">
+  <FloatingLabel label="Avatar" className="floating-label" />
+  <AvatarUpload setAvatar={setAvatar} imageUrl={avatar} />
+</div>
+
+      <Button variant="primary" type="submit" className='form__button'>
+        Sing In
       </Button>
-    </Form>);
+    </Form>
+  );
 };
 
 export default Register;

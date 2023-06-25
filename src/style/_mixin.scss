@@ -164,6 +164,18 @@ color: $color;
         text-align: center;
         margin: 0px;
       }
+      @mixin Textogrande ( $gray5, $gray2,$s20, 
+      $s14,$s10,$s24) {
+          color: $gray5;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 600;
+          font-size: $s24;
+          line-height: 16px;
+          text-align: inherit;
+          margin: 0px;
+        }
+      
       @mixin div (){
         position: absolute;
         padding: 16px;

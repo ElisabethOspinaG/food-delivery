@@ -9,7 +9,7 @@ export const restaurantReducer = (state = initialState, action) =>{
         case restaurantsTypes.RESTAURANTS_GET:
             return {
                 ...state,
-                restaurants: action.payload,
+                restaurants:[ ...action.payload],
             };
         case restaurantsTypes.RESTAURANTS_ADD:
             return {
@@ -19,12 +19,11 @@ export const restaurantReducer = (state = initialState, action) =>{
         case restaurantsTypes.RESTAURANTS_FILTERED:
             return {
                 ...state,
-                restaurants: action.payload.restaurants,
+                restaurants: [...action.payload.Restaurantes],
             };
         default:
             return state;
     }
 }
 
- restaurantReducer
 

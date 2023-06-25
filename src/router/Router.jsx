@@ -1,13 +1,4 @@
-// // import React from 'react'
-// import SearchPage from '../pages/SearchPage'
-// const Router = () => {
-//   return (
-//     <div>
-//         <SearchPage></SearchPage></div>
-//   )
-// }
 
-// export default Router
 import { onAuthStateChanged } from "firebase/auth";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -18,8 +9,10 @@ import Login from "../pages/Login.jsx";
 import Register from "../pages/Register";
 import { auth } from "../Firebase/firebaseConfig";
 import NavigationBar from "../pages/NavigationBar";
+import RestaurantPage from "../pages/RestaurantPage";
 
 const Router = () => {
+ 
   const [cheking, setCheking] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(undefined);
 
@@ -41,11 +34,12 @@ const Router = () => {
 
   return (
     <BrowserRouter>
-      <NavigationBar isAutentication={isLoggedIn} />
+  
       <Routes>
         <Route element={<PublicRouter isAutentication={isLoggedIn} />}>
-          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Register />} />
           <Route path="/user" element={<Login />} />
+          <Route path="/restaurant/:id"element={<RestaurantPage/>}></Route>
         </Route>
         <Route element={<PrivateRouter isAutentication={isLoggedIn} />}>
           <Route path="/*" element={<DashboardRouter />} />

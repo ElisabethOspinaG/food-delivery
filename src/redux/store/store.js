@@ -6,7 +6,7 @@ import {restaurantReducer} from "../reducers/restaurantsReducer";
 const reducer ={
    user: userReducer,
    counter: counterReducer,
-   restaurantStore: restaurantReducer,
+   restaurantStore: restaurantReducer ,
 };
 
 const store = configureStore({

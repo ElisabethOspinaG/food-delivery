@@ -16,8 +16,11 @@ export const actionGetRestaurantAsync = () => {
           id: doc.id,
           ...doc.data(),
         });
+        // console.log(doc.id);
         //   console.log(doc.id, " => ", doc.data());
       });
+      
+    console.log("all restaurants", Restaurantes)
     } catch (error) {
       console.error(error);
     } finally {
@@ -29,9 +32,8 @@ export const actionGetRestaurantAsync = () => {
 const actionGetRestaurantsSync = (Restaurantes) => {
   return {
     type: restaurantsTypes.RESTAURANTS_GET,
-    payload: {
-        Restaurantes: Restaurantes,
-    },
+    payload:Restaurantes,
+    
   };
 };
 
@@ -55,32 +57,35 @@ const actionAddRestaurantSync = (Restaurantes) => {
   };
 };
 
-export const actionFilterRestaurantAsync = (searchParam, searchValue) => {
+export const actionFilterRestaurantAsync = (searchValue) => {
+  console.log("searchValue ", searchValue );
   return async (dispatch) => {
     const restaurantCollection = collection(dataBase, collectionName);
-    const q = query(restaurantCollection, where(searchParam, "==", searchValue));
-    const Restaurantes = [];
+    const q = query(restaurantCollection, where("platos", 'array-contains', searchValue ));
+    const restaurantes = [];
     try {
       const querySnapshot = await getDocs(q);
+      console.log("infor query: ", querySnapshot );
       querySnapshot.forEach((doc) => {
-        Restaurantes.push({
+        restaurantes.push({
           id: doc.id,
           ...doc.data(),
         });
       });
+      console.log("restaurante", restaurantes) 
     } catch (error) {
       console.log(error);
     } finally {
-      dispatch(actionFilterRestaurantSync(Restaurantes));
+      dispatch(actionFilterRestaurantSync(restaurantes));
     }
   };
 };
 
-const actionFilterRestaurantSync = (Restaurantes) => {
+const actionFilterRestaurantSync = (restaurantes) => {
   return {
     type: restaurantsTypes.RESTAURANTS_FILTERED,
     payload: {
-        Restaurantes: Restaurantes,
+        Restaurantes: restaurantes,
     },
   };
 };
@@ -104,7 +109,7 @@ export const actionFilterAsync = (searchParam) => {
       const filteredRestaurants = Restaurantes.filter((item) =>
         item.name.toLowerCase().includes(searchParam.toLowerCase())
       );
-      dispatch(actionFilterRestaurantSync(filterdPaletas));
+      // dispatch(actionFilterRestaurantSync(filterdPaletas));
     } catch (error) {
       console.error(error);
       dispatch(actionFilterRestaurantSync([]));

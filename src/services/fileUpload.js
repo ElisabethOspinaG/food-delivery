@@ -1,12 +1,12 @@
-// import { v2 as cloudinary } from 'cloudinary';
+// import {  cloudinary } from 'cloudinary';
 
 // export const fileUpLoad = async (file) => {
 //   cloudinary.config({ 
-//     cloud_name: 'dar9uwn3r', 
+//     cloud_name: 'subirarchivos', 
 //     api_key: '297533297429483', 
 //     api_secret: 'yuBP5OT63RxmcdbFLtuBqqTshrw' 
 //   });
-//     const cloudName = "dspyfujx0";
+//     const cloudName = "subirarchivos";
 //     const uploadPreset = "test-cloudinary";
   
 //     const urlCloudinary = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
