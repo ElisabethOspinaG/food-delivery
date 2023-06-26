@@ -5,7 +5,6 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerAccionAsync } from '../redux/actions/userActions';
-import { useSelector } from 'react-redux';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Swal from 'sweetalert2';
 import AvatarUpload from "../components/AvatarUpload";
