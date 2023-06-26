@@ -5,9 +5,8 @@ import imgOrder from '../../assets/img/home/Orders.svg';
 import imgProfile from '../../assets/img/home/Profile.svg';
 import useOnClick from '../../functions/useOnClick';
 
-
 const LayoutHome = () => {
-    // const handleClick = useOnClick();
+    const handleClick = useOnClick();
    
     const buttonLayout = [
         {

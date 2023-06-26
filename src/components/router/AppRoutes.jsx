@@ -4,7 +4,8 @@ import RestaurantPage from '../../pages/RestaurantPage';
 import Home from '../../pages/Home';
 import StartPage from '../../pages/StartPage';
 import SearchPage from '../../pages/SearchPage';
-import OrderPlaced from '../../pages/OrderPlaced';
+import OrderPlaced from '../../pages/OrderHistory';
+import Login from '../../pages/Login';
 import LoginAdministrator from '../../pages/LoginAdministrator';
 import Comments from "../../pages/Comments";
 import NoFound from '../../pages/NoFound';
@@ -23,6 +24,8 @@ const AppRoutes = () => {
         <Route path="search" element={<SearchPage/>} />
         <Route path="order" element={<OrderPlaced/>} />
         <Route index path="register" element={<Register/>} />
+       
+        <Route path="login" element={<Login/>} />
         <Route path="admin" element={<LoginAdministrator/>} />
         <Route path="user" element={<Login/>}/>
         <Route path="profile" element={<Profile/>} />
@@ -34,3 +37,4 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
+

@@ -17,5 +17,3 @@ console.log(root);
   </React.StrictMode>
 );
 
-
-

@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { registerAccionAsync } from '../redux/actions/userActions';
 import { useSelector } from 'react-redux';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
