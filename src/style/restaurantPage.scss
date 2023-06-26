@@ -131,7 +131,7 @@ letter-spacing: -0.3px;
     &__logo2 {
         position: absolute;
         
-    object-fit: cover;
+        object-fit: contain;
 width: 68px;
 height: 36px;
 left: 181px;
@@ -217,7 +217,7 @@ top: 312px;}
     div{
 
         position: absolute;
-       Top:192px;
+        Top: 219px;
 Left:169px;     
     }
 
@@ -244,3 +244,50 @@ top: 523px;
     left:217px;
     top: 736px; 
 }
+.container__map {
+    display: grid;
+    grid-template-columns: repeat(2, 171px);; // Dos columnas con igual ancho
+    grid-gap: 8px; // Espacio entre los divs
+
+    border-radius: 10px;
+
+
+
+  }
+  
+  .column {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr); // Tres filas con igual altura
+  }
+  
+  .column div {
+    
+padding: 8px;
+  gap:8px;
+    box-shadow: inset 0px 0px 4px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .column h3 {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: left;
+    color:#414141;
+  }
+  
+  .column img {
+    width: 154.00001525878963px;
+    height: 109.99998474121135px;
+  
+border-radius: 10px;    
+  }
+  
+  .column p {
+@include  Texto ( $gray5, $gray2,$s20, 
+$s14,$s10);
+color:$gray2;
+text-align: inherit;
+  }
+  

@@ -5,12 +5,13 @@ import store from '../src/redux/store/store';
 import Router from "../src/router/Router";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+console.log(root);
  
   root.render(
 
   <React.StrictMode>
     <Provider store={store}>
-      {/* <AppRouter /> */}
+
     <Router></Router>
     </Provider>
   </React.StrictMode>

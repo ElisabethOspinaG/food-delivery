@@ -10,7 +10,8 @@ import Register from "../pages/Register";
 import { auth } from "../Firebase/firebaseConfig";
 import NavigationBar from "../pages/NavigationBar";
 import RestaurantPage from "../pages/RestaurantPage";
-
+import Home from "../pages/Home";
+import DishPage from "../pages/DishPage";
 const Router = () => {
  
   const [cheking, setCheking] = useState(true);
@@ -34,12 +35,13 @@ const Router = () => {
 
   return (
     <BrowserRouter>
-  
       <Routes>
         <Route element={<PublicRouter isAutentication={isLoggedIn} />}>
           <Route path="/" element={<Register />} />
           <Route path="/user" element={<Login />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/restaurant/:id"element={<RestaurantPage/>}></Route>
+          <Route path="/dish/:nombrePlato"element={<DishPage/>}></Route>
         </Route>
         <Route element={<PrivateRouter isAutentication={isLoggedIn} />}>
           <Route path="/*" element={<DashboardRouter />} />

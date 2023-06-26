@@ -10,10 +10,11 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Swal from 'sweetalert2';
 import AvatarUpload from "../components/AvatarUpload";
 import "../style/registerStyle.scss";
+import { useNavigate } from 'react-router-dom';
 const Register = () => {
   const [avatar, setAvatar] = useState("");
   const dispatch = useDispatch();
-
+  const navigate=useNavigate();
   const schema = yup.object().shape({
     name: yup.string().required('Name is required'),
     email: yup.string().email('Invalid email').required('Email is required'),
@@ -42,12 +43,15 @@ const Register = () => {
       Swal.fire("Oops!", `Ha ocurrido un error: ${errorMessage}`, "error");
     } else {
       Swal.fire("Good job!", "Tu cuenta se ha creado exitosamente!", "success");
+       
+    navigate("/user")
+
     }
 
     console.log(user);
     console.log(user.avatar);
+   
   };
-
   return (
     <Form className='form' onSubmit={handleSubmit(onSubmit)}>
       <h1>Create account</h1>

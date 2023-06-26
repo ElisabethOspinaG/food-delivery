@@ -41,6 +41,7 @@ const Home = () => {
 
   const navigate = useNavigate();
   const handleClick = ( id) => {
+    console.log('Clicked Restaurant ID:', id);
     navigate(`/restaurant/${id}`);
   };
   
@@ -79,7 +80,7 @@ const Home = () => {
           {restaurants.map((rest) => (
             <div
               key={rest.id}
-              onClick={(event) => handleClick( rest.id)}
+              onClick={() => handleClick( rest.id)}
               className="home__container-restaurant"
             >
               <div className="home__container-ImgRestaurant">

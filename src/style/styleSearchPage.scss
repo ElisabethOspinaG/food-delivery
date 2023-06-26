@@ -111,8 +111,12 @@ border-radius: 10px;
   }
   .home__layout{
     position: absolute;
-    left: 34px;
-top: 798px;
+    left: 12px;
+    width: 390px;
+    top: 798px;
+    display: flex;
+    justify-content: space-between;
+
   }
   #buttontrash{
     position: relative;

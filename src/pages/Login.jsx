@@ -14,6 +14,7 @@
   import * as yup from "yup";
   import Swal from "sweetalert2";
   import { loginProvider } from "../services/dates";
+  import { useNavigate } from "react-router-dom";
   
   const schema = yup.object({
     email: yup
@@ -24,6 +25,7 @@
   });
   
   const Login = () => {
+    const navigate=useNavigate();
     const {
       register,
       handleSubmit,
@@ -44,7 +46,8 @@
       if (error) {
         Swal.fire("Oops!", `Ha ocurrido un error: ${errorMessage}`, "error");
       } else {
-        Swal.fire("Good job!", "Tu cuenta se ha creado exitosamente!", "success");
+        Swal.fire("Good job!", "Has accedido!", "success");
+        navigate("/home")
       }
     };
   
@@ -79,7 +82,7 @@
             Iniciar Sesión
           </Button>
         </Form>
-        <Link to="/Register">¿Desea crear una cuenta?</Link>
+        <Link to="/">¿Desea crear una cuenta?</Link>
         <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
           {loginProvider.map((provider, index) => (
             <img
