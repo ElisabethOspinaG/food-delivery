@@ -173,6 +173,27 @@
         text-align: center;
         margin: 0px;
       }
+      @mixin Texto1 ( $color:null , $fontSize:null ,$fontSize2: null
+    ) {
+          color: $gray5;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 400;
+          font-size: $s14;
+          line-height: 16px;
+          text-align: center;
+          margin: 0px;
+          @if $color {
+            color:$gray2;
+          }
+        
+          @if $fontSize {
+            font-size:$s20 ;
+          }
+          @if $fontSize2 {
+            font-size:$s10 ;
+          }
+        }
       @mixin Textogrande ( $gray5, $gray2,$s20, 
       $s14,$s10,$s24) {
           color: $gray5;

@@ -50,17 +50,11 @@
     flex-direction: row; 
     }
     h1{
-        @include Texto
-        ( $gray5, $gray2,$s20, 
-        $s14,$s10);
-        color:$gray5;
+    @include Texto1($color: false, $fontSize: false, $fontSize2: false);
     }
     h3{
         width: max-content;
-        @include Texto
-        ( $gray5, $gray2,$s20, 
-        $s14,$s10);
-        color:$gray2;
+        @include Texto1($color: true, $fontSize: false, $fontSize2: false);
     }
   }
   &__div3{
@@ -98,10 +92,7 @@ text-align: center;
     flex-direction: row;
     justify-content: space-between;
     h1{
-        @include Texto
-        ( $gray5, $gray2,$s20, 
-        $s14,$s10);
-        color:$gray5;
+      @include Texto1($color: false, $fontSize: false, $fontSize2: false);
     }
     h2{
         @include Texto3

@@ -285,9 +285,7 @@ border-radius: 10px;
   }
   
   .column p {
-@include  Texto ( $gray5, $gray2,$s20, 
-$s14,$s10);
-color:$gray2;
+    @include Texto1($color: true, $fontSize: false, $fontSize2: false);
 text-align: inherit;
   }
   

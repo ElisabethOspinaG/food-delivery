@@ -49,16 +49,11 @@
     }
 
     h3 {
-        @include Texto ($gray5, $gray2, $s20,
-            $s14, $s10);
-        font-size: $s10 ;
+        @include Texto1($color: false, $fontSize: false, $fontSize2: true);
     }
 
     h1 {
-        @include Texto ($gray5, $gray2, $s20,
-            $s14, $s10);
-        color: $gray5;
-        font-size: $s20;
+        @include Texto1($color: false, $fontSize: true, $fontSize2: false);
 
         @include mobile {
             position: absolute;
@@ -69,10 +64,7 @@
     }
 
     h2 {
-        @include Texto ($gray5, $gray2, $s20,
-            $s14, $s10);
-        color: $gray5;
-        font-size: $s20;
+        @include Texto1($color: false, $fontSize: true, $fontSize2: false);
         font-weight: 300;
 
         @include mobile {
@@ -90,11 +82,7 @@
             top: 400px;
         }
 
-        @include Texto ($gray5, $gray2, $s20,
-            $s14, $s10);
-        color:$gray2;
-        font-size:$s20;
-        font-weight: 300;
+        @include Texto1($color: true, $fontSize: true, $fontSize2: false);
     }
 
     img {

@@ -13,10 +13,8 @@
     }
    
     label{
-        @include Texto( $gray5, $gray2,$s20, 
-        $s14,$s10);
-        font-size:$s10 ;
-        color: $gray2;
+      @include Texto1($color: true, $fontSize: false, $fontSize2: true);
+
     }
     &__button{
         @include buttonSquare3;
